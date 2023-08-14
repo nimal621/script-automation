@@ -4,7 +4,7 @@ pipeline {
     stages {
     stage('Test') {
       steps {
-        bat 'mvn liquibase:update'
+        bat '-Dliquibase.url=jdbc:mysql://localhost:3306/liquibase -Dliquibase.username=root -Dliquibase.password=root liquibase:update -DchangelogFile=db/changelog/db.changelog-sq1.sql'
       }
     }
   }
