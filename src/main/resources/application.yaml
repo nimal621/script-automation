@@ -1,0 +1,32 @@
+url: jdbc:mysql://localhost:3306/liquibase
+username: root
+password: root
+spring:
+  profiles:
+    active: local
+  application:
+    name: liquibase
+server:
+  port: 8089
+  servlet:
+    context-path: /liquibase
+
+logging:
+  level:
+    "liquibase" : debug
+---
+spring:
+  profiles: local
+  jpa:
+    database: MYSQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/liquibase
+    username: root
+    password: root
+  liquibase:
+    parameters:
+      textColumnType: TEXT
+    contexts: local
+    
+
+
