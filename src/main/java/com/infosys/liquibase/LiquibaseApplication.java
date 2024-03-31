@@ -9,4 +9,5 @@ public class LiquibaseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LiquibaseApplication.class, args);
 	}
+	
 }
